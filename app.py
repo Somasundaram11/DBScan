@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load model
-model = pickle.load(open("model.pkl", "rb"))
+pickle.load(open("model.pkl", "rb"))
 
 st.title("Life Expectancy Prediction App")
 
@@ -14,3 +14,4 @@ if st.button("Predict"):
     features = np.array([[female, total]])
     result = model.predict(features)[0]
     st.success(f"Predicted Sum of Males Life Expectancy: {result:.2f}")
+
